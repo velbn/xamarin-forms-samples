@@ -1,14 +1,14 @@
 ﻿using System;
 using Xamarin.Forms;
-using WorkingWithListviewPerf;
-using WorkingWithListviewPerf.Droid;
+using WorkingWithListviewNative;
+using WorkingWithListviewNative.Droid;
 using Xamarin.Forms.Platform.Android;
 using System.Collections;
 using System.Linq;
 
 [assembly: ExportRenderer (typeof (NativeListView2), typeof (NativeAndroidListViewRenderer))]
 
-namespace WorkingWithListviewPerf.Droid
+namespace WorkingWithListviewNative.Droid
 {
 	public class NativeAndroidListViewRenderer : ViewRenderer<NativeListView2, global::Android.Widget.ListView>
 	{
@@ -35,6 +35,11 @@ namespace WorkingWithListviewPerf.Droid
 				Control.ItemClick += clicked;
 			}
 		}
+
+//		public override void Layout (int l, int t, int r, int b)
+//		{
+//			base.Layout (l, t, r, b);
+//		}
 
 		void clicked (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) {
 			Element.NotifyItemSelected (Element.Items.ToList()[e.Position]);

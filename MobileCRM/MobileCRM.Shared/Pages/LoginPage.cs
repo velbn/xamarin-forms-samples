@@ -1,4 +1,4 @@
-﻿using MobileCRM.Shared.ViewModels;
+using MobileCRM.Shared.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,7 +32,7 @@ namespace MobileCRM.Shared.Pages
             username.SetBinding(Entry.TextProperty, LoginViewModel.UsernamePropertyName);
             layout.Children.Add(username);
 
-            var password = new Entry { Placeholder = "Password" };
+            var password = new Entry { Placeholder = "Password", IsPassword = true };
             password.SetBinding(Entry.TextProperty, LoginViewModel.PasswordPropertyName);
             layout.Children.Add(password);
 
